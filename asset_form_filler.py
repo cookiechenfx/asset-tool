@@ -119,14 +119,6 @@ class AssetFormFiller:
                 ws = wb.active
                 ws.title = f"{form_data.get('asset_type', '固定资产')}领用回收单"
 
-            # 设置边框样式
-            thin_border = Border(
-                left=Side(style='thin'),
-                right=Side(style='thin'),
-                top=Side(style='thin'),
-                bottom=Side(style='thin')
-            )
-
             # 1. 设置标题（如果是新创建的模板）
             if not self.template_path:
                 ws.merge_cells('A1:H1')
@@ -141,19 +133,16 @@ class AssetFormFiller:
             # 2. 填写申请部门（第2行，C列）
             department_cell = ws['C2']
             department_cell.value = form_data.get('department', '')
-            department_cell.border = thin_border
 
             # 3. 填写使用人（第2行，G列）
             # user_cell = ws['G2']
             user_cell = ws['F2']
             user_cell.value = form_data.get('user', '')
-            user_cell.border = thin_border
 
             # 4. 填写领用/回收时间（第3行，C列）
             # date_cell = ws['C3']
             date_cell = ws['H2']
             date_cell.value = form_data.get('date', datetime.now().strftime('%Y-%m-%d'))
-            date_cell.border = thin_border
 
             # 5. 填写资产数据
             assets = form_data.get('assets', [])
@@ -174,33 +163,27 @@ class AssetFormFiller:
                 # 资产名称
                 name_cell = ws.cell(row=row, column=2, value=asset.get('name', ''))
                 name_cell.alignment = Alignment(horizontal='center', vertical='center')
-                name_cell.border = thin_border
 
                 # 品牌型号
                 model_cell = ws.cell(row=row, column=4, value=asset.get('brand_model', ''))
                 model_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
-                model_cell.border = thin_border
 
                 # 安装地点
                 location_cell = ws.cell(row=row, column=6, value=asset.get('location', ''))
                 location_cell.alignment = Alignment(horizontal='center', vertical='center')
-                location_cell.border = thin_border
 
                 # 资产编码
                 code_cell = ws.cell(row=row, column=7, value=asset.get('asset_code', ''))
                 code_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
-                code_cell.border = thin_border
 
                 # 备注（领用/回收标识）
                 remark_text = f"{asset.get('action', '')} {asset.get('remark', '')}"
                 remark_cell = ws.cell(row=row, column=8, value=remark_text)
                 remark_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
-                remark_cell.border = thin_border
 
             # 6. 填写申请事由
             reason_cell = ws['C10']
             reason_cell.value = form_data.get('reason', '')
-            reason_cell.border = thin_border
 
             # # 7. 设置固定资产管理部门审核意见中的日期
             # review_cell = ws['C21']
