@@ -61,6 +61,8 @@ class AssetFormFiller:
         """按使用人分组资产数据"""
         grouped = {}
         for asset in assets:
+            if '搬迁' in asset['action']:
+                continue
             user_key = f"{asset['asset_type']}_{asset['user']}_{asset['department']}"
             if user_key not in grouped:
                 grouped[user_key] = {
@@ -204,47 +206,6 @@ class AssetFormFiller:
             return None
 
 
-def create_sample_data():
-    """创建示例数据用于测试"""
-    form_data = {
-        'form_type': '领用/回收',
-        'department': '天府文创城人民法庭',
-        'user': '周明军',
-        'date': '2026-05-11',
-        'reason': '工作需要，申请领用台式计算机和显示器各一台，同时回收旧设备。',
-        'assets': [
-            {
-                'name': '台式计算机',
-                'brand_model': '戴尔OptiPlex 3050 SFF 003068',
-                'location': '2号楼623',
-                'asset_code': '510122MB1867896218000450',
-                'remark': '回收'
-            },
-            {
-                'name': '显示器',
-                'brand_model': '戴尔E2318H',
-                'location': '2号楼623',
-                'asset_code': '201801160156',
-                'remark': '回收'
-            },
-            {
-                'name': '台式计算机',
-                'brand_model': '联想开天E50h G1t-D170',
-                'location': '2号楼623',
-                'asset_code': '510116MB1867896226000054',
-                'remark': '发放'
-            },
-            {
-                'name': '显示器',
-                'brand_model': '联合创新29B2F-P',
-                'location': '2号楼623',
-                'asset_code': '510116MB1867896226000054XSQ',
-                'remark': '发放'
-            }
-        ]
-    }
-    return form_data
-
 
 def main():
     """主函数"""
@@ -321,59 +282,6 @@ def main():
         for i, asset in enumerate(assets, 1):
             print(f"  {i}. {asset['name']} - {asset['action']} - {asset['user']}")
 
-    # # 示例数据
-    # sample_data = """周明军	文创城法庭	其他	回收	台式计算机	510122MB1867896218000450	戴尔OptiPlex 3050 SFF 003068	文创城法庭	根据统一安排替换	固定资产
-    # 周明军	文创城法庭	其他	回收	显示器	201801160156	戴尔E2318H	文创城法庭	根据统一安排替换	固定资产
-    # 周明军	文创城法庭	其他	发放	台式计算机	510116MB1867896226000054	联想开天E50h G1t-D170	文创城法庭	根据统一安排替换	固定资产
-    # 周明军	文创城法庭	其他	发放	显示器	510116MB1867896226000054XSQ	联合创新29B2F-P	文创城法庭	根据统一安排替换	固定资产"""
-    #
-    # print("\n请选择输入方式:")
-    # print("1. 使用示例数据")
-    # print("2. 手动粘贴数据")
-    # print("3. 从文件读取")
-    #
-    # choice = input("\n请输入选择 (1/2/3): ").strip()
-    #
-    # filler = AssetFormFiller("/home/ubuntu/PycharmProjects/assetManagement/固定资产领用及回收单-模板.xlsx")
-    # # filler = AssetFormFiller()
-    #
-    # if choice == '1':
-    #     # 使用示例数据
-    #     data = sample_data
-    #     print("\n使用示例数据:")
-    #     print(data)
-    # elif choice == '2':
-    #     # 手动粘贴数据
-    #     print("\n请粘贴数据（每行格式：使用人\t部门\t分类\t操作类型\t资产名称\t资产编码\t品牌型号\t备注\t资产类型）")
-    #     print("输入完成后按 Ctrl+D (Linux/Mac) 或 Ctrl+Z (Windows) 结束")
-    #     lines = []
-    #     try:
-    #         while True:
-    #             line = input()
-    #             if not line:
-    #                 break
-    #             lines.append(line)
-    #     except EOFError:
-    #         pass
-    #     data = '\n'.join(lines)
-    #
-    # elif choice == '3':
-    #     # 从文件读取
-    #     file_path = input("请输入文件路径: ").strip()
-    #     try:
-    #         with open(file_path, 'r', encoding='utf-8') as f:
-    #             data = f.read()
-    #     except Exception as e:
-    #         print(f"读取文件失败: {e}")
-    #         return
-    # else:
-    #     print("无效选择")
-    #     return
-
-    # 解析数据
-    # print("\n正在解析数据...")
-    # assets = filler.parse_tab_data(data)
-    # print(f"✓ 成功解析 {len(assets)} 条资产记录")
 
     # 按使用人分组
     grouped = filler.group_assets_by_user(assets)
