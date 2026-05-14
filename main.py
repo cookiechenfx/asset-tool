@@ -40,14 +40,15 @@ class AssetManagementSystem:
             chrome_options.add_argument('--disable-gpu')  # 禁用GPU加速
             chrome_options.add_argument('--window-size=1920,1080')  # 设置窗口大小
 
-            # 指定 Chromium 路径（Ubuntu 默认路径）
-            chrome_options.binary_location = '/usr/bin/chromium-browser'
-
-            # 指定 Chromedriver 路径
-            service = Service('/usr/lib/chromium-browser/chromedriver')
+            # # 指定 Chromium 路径（Ubuntu 默认路径）
+            # chrome_options.binary_location = '/usr/bin/chromium-browser'
+            #
+            # # 指定 Chromedriver 路径
+            # service = Service('/usr/lib/chromium-browser/chromedriver')
 
             # 创建驱动
-            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+            # self.driver = webdriver.Chrome(service=service, options=chrome_options)
+            self.driver = webdriver.Chrome(options=chrome_options)
             self.driver.set_page_load_timeout(30)
             self.wait = WebDriverWait(self.driver, 10)
 
