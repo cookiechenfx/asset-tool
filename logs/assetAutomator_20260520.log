@@ -255,3 +255,135 @@
 2026-05-20 13:38:05 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-测试人员2.xlsx
 2026-05-20 13:38:05 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-测试人员2.xlsx
 2026-05-20 13:38:05 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单
+2026-05-20 14:47:05 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:47:05 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:47:05 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:47:05 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:47:05 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:47:05 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:47:06 | INFO     | asset_automator.py:226 | 查询到2条资产信息！！
+2026-05-20 14:47:54 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:47:54 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:47:54 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:47:54 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:47:54 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:47:55 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:51:14 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:51:14 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:51:14 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:51:14 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:51:14 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:51:15 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:51:24 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:51:24 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:51:24 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:51:24 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:51:24 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:51:26 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:52:05 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:52:05 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:52:05 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:52:05 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:52:05 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:52:05 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:52:05 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:52:05 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:56:01 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:56:01 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:56:01 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:56:01 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:56:01 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:56:01 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:56:02 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:56:02 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:57:46 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 14:57:46 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 14:57:46 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 14:57:46 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 14:57:46 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 14:57:47 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 14:57:47 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:57:47 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 14:57:47 | ERROR    | asset_automator.py:152 | 新建用户失败！未查询到已有部门:研究室
+2026-05-20 14:57:47 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 14:57:48 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 14:57:48 | INFO     | asset_automator.py:281 | ✅ IP语音座机 test202601101004 备注内容：号码2232停用修改成功！
+2026-05-20 14:57:48 | INFO     | asset_automator.py:344 | ✅ 📊资产修改完成,  修改后数据：{'id': 'E42F3C54-ECFF-4737-BD8E-46868511E9A2', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 14:57:47', 'maintainCost': 0.0, 'businessStatus': 64, 'operateTime': '2026-05-20 14:57:47', 'state': 0}
+2026-05-20 14:57:49 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-20 14:57:49 | INFO     | asset_automator.py:344 | ✅ 📊资产修改完成,  修改后数据：{'id': '2AE757C7-24C1-446E-9A8B-EB748ADBEE90', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 14:57:49', 'maintainCost': 0.0, 'depositSite': '2号楼425', 'businessStatus': 64, 'operateTime': '2026-05-20 14:57:49', 'state': 0}
+2026-05-20 14:57:49 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-冯雪.xlsx
+2026-05-20 14:57:49 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-刘波.xlsx
+2026-05-20 14:57:49 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单
+2026-05-20 15:01:05 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 15:01:05 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 15:01:05 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 15:01:05 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 15:01:05 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 15:01:05 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 15:01:05 | INFO     | asset_automator.py:237 | ✅ 查询到资产：编码=TY2022000008, 名称=台式计算机
+2026-05-20 15:01:05 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:01:05 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:01:05 | ERROR    | asset_automator.py:152 | 新建用户失败！未查询到已有部门:研究室
+2026-05-20 15:01:06 | INFO     | asset_automator.py:231 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:01:06 | INFO     | asset_automator.py:231 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:01:06 | INFO     | asset_automator.py:284 | ✅ IP语音座机 test202601101004 备注内容：号码2232停用修改成功！
+2026-05-20 15:01:06 | INFO     | asset_automator.py:347 | ✅ 📊资产修改完成,  修改后数据：{'id': 'FE4F4D55-2D81-4F32-9DF2-F82A41BAD260', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:01:05', 'maintainCost': 0.0, 'businessStatus': 64, 'operateTime': '2026-05-20 15:01:06', 'state': 0}
+2026-05-20 15:01:07 | INFO     | asset_automator.py:231 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-20 15:01:07 | INFO     | asset_automator.py:347 | ✅ 📊资产修改完成,  修改后数据：{'id': 'FEC1E7F5-A56F-40F2-A18B-C41E2EFC1F15', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:01:06', 'maintainCost': 0.0, 'depositSite': '2号楼425', 'businessStatus': 64, 'operateTime': '2026-05-20 15:01:07', 'state': 0}
+2026-05-20 15:01:07 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-冯雪.xlsx
+2026-05-20 15:01:07 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-刘波.xlsx
+2026-05-20 15:01:07 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单
+2026-05-20 15:03:09 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 15:03:09 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 15:03:09 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 15:03:09 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 15:03:09 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 15:03:10 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 15:03:10 | INFO     | asset_automator.py:235 | ✅ 查询到资产：编码=TY2022000008, 名称=台式计算机
+2026-05-20 15:03:10 | ERROR    | asset_automator.py:295 | 未查询到准确的资产信息，资产编码TY2022000008修改失败
+2026-05-20 15:03:11 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:03:11 | ERROR    | asset_automator.py:295 | 未查询到准确的资产信息，资产编码test202601101004修改失败
+2026-05-20 15:03:11 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-20 15:03:11 | ERROR    | asset_automator.py:295 | 未查询到准确的资产信息，资产编码test201801160107修改失败
+2026-05-20 15:03:11 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-冯雪.xlsx
+2026-05-20 15:03:11 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-刘波.xlsx
+2026-05-20 15:03:11 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单
+2026-05-20 15:04:01 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 15:04:01 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 15:04:01 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 15:04:01 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 15:04:01 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 15:04:01 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 15:04:02 | INFO     | asset_automator.py:235 | ✅ 查询到资产：编码=TY2022000008, 名称=台式计算机
+2026-05-20 15:04:02 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:04:02 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:04:02 | ERROR    | asset_automator.py:152 | 新建用户失败！未查询到已有部门:研究室
+2026-05-20 15:04:02 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:04:02 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:04:03 | INFO     | asset_automator.py:282 | ✅ IP语音座机 test202601101004 备注内容：号码2232停用修改成功！
+2026-05-20 15:04:03 | INFO     | asset_automator.py:347 | ✅ 📊资产修改完成,  修改后数据：{'id': 'F41876DC-7A16-4DC2-A09D-69F506A4013A', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:04:02', 'maintainCost': 0.0, 'businessStatus': 64, 'operateTime': '2026-05-20 15:04:02', 'state': 0}
+2026-05-20 15:04:03 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-20 15:04:03 | INFO     | asset_automator.py:347 | ✅ 📊资产修改完成,  修改后数据：{'id': '249A2A5A-12F4-4231-BBC5-16BC4D5B4987', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:04:03', 'maintainCost': 0.0, 'depositSite': '2号楼425', 'businessStatus': 64, 'operateTime': '2026-05-20 15:04:03', 'state': 0}
+2026-05-20 15:04:03 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-冯雪.xlsx
+2026-05-20 15:04:03 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-刘波.xlsx
+2026-05-20 15:04:03 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单
+2026-05-20 15:06:57 | INFO     | file_logger.py:75 | 程序启动
+2026-05-20 15:06:57 | INFO     | file_logger.py:75 | 成功解析 3 条资产记录
+2026-05-20 15:06:57 | INFO     | file_logger.py:75 | 资产0. 台式计算机 - TY2022000008 - 发放 - 冯雪
+2026-05-20 15:06:57 | INFO     | file_logger.py:75 | 资产1. IP语音座机 - test202601101004 - 回收 - 刘波
+2026-05-20 15:06:57 | INFO     | file_logger.py:75 | 资产2. 显示器 - test201801160107 - 回收 - 冯雪
+2026-05-20 15:06:58 | INFO     | asset_automator.py:46 | ✅ 资产管理系统登录成功
+2026-05-20 15:06:58 | INFO     | asset_automator.py:235 | ✅ 查询到资产：编码=TY2022000008, 名称=台式计算机
+2026-05-20 15:06:58 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:06:58 | WARNING  | asset_automator.py:140 | 部门:研究室不存在
+2026-05-20 15:06:58 | ERROR    | asset_automator.py:152 | 新建用户失败！未查询到已有部门:研究室
+2026-05-20 15:06:58 | ERROR    | asset_automator.py:302 | 未查询到人员且无法创建，资产编码TY2022000008修改失败
+2026-05-20 15:06:58 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:06:59 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-20 15:06:59 | INFO     | asset_automator.py:282 | ✅ IP语音座机 test202601101004 备注内容：号码2232停用修改成功！
+2026-05-20 15:06:59 | INFO     | asset_automator.py:348 | ✅ 📊资产修改完成,  修改后数据：{'id': 'E034724A-C54E-46DC-8F24-10EA266A70FA', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:06:58', 'maintainCost': 0.0, 'businessStatus': 64, 'operateTime': '2026-05-20 15:06:58', 'state': 0}
+2026-05-20 15:07:00 | INFO     | asset_automator.py:229 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-20 15:07:00 | INFO     | asset_automator.py:348 | ✅ 📊资产修改完成,  修改后数据：{'id': '97CEEFC4-74E3-42A9-8A61-BFC18BF8A36E', 'deptName': '', 'staffName': '', 'createTime': '2026-05-20 15:06:59', 'maintainCost': 0.0, 'depositSite': '2号楼425', 'businessStatus': 64, 'operateTime': '2026-05-20 15:07:00', 'state': 0}
+2026-05-20 15:07:00 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520固定资产申领单-冯雪.xlsx
+2026-05-20 15:07:00 | INFO     | asset_form_filler.py:233 | ✅ 表单已保存: ./资产申领回收单/20260520信息化资产申领单-刘波.xlsx
+2026-05-20 15:07:00 | INFO     | asset_form_filler.py:234 | ✅ 总共生成 2 个表单

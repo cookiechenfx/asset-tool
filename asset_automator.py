@@ -141,10 +141,16 @@ class AssetAutomator:
 
         return right_department
 
-
     def create_staff_account(self, departmentName, staffName):
-        department = self.search_department(departmentName )
-        id = department.get('id', "")
+        if not departmentName or not staffName:
+            self.log.error(f"新建用户失败！需同时输入部门:{departmentName}人员:{staffName}信息")
+            return False
+        department = self.search_department(departmentName)
+        if department:
+            id = department.get('id', "")
+        else:
+            self.log.error(f"新建用户失败！未查询到已有部门:{departmentName}")
+            return False
         if id and staffName:
             params = {
                 'affiliatedDept': id,
@@ -223,6 +229,11 @@ class AssetAutomator:
             self.log.info(f"✅ 查询到资产：编码={asset.get('assetCoding')}, 名称={asset.get('assetName')}")
             return asset
         elif len(asset_list) > 1:
+            if asset_code:
+                for asset in asset_list:
+                    if asset['assetCoding'] == asset_code:
+                        self.log.info(f"✅ 查询到资产：编码={asset.get('assetCoding')}, 名称={asset.get('assetName')}")
+                        return asset
             self.log.info(f"查询到{len(asset_list)}条资产信息！！")
             return asset_list
         else:
@@ -278,14 +289,17 @@ class AssetAutomator:
         """修改资产信息"""
         searched_asset = self.query_asset(asset_code=asset['asset_code'])
         # print(searched_asset)
-        asset_id = searched_asset.get('id')
-        if not asset_id:
+        if searched_asset and type(searched_asset) == dict:
+            asset_id = searched_asset.get('id')
+        else:
+            self.log.error(f"未查询到准确的资产信息，资产编码{asset['asset_code']}修改失败")
             return
         if "发放" in asset['action'] or "调整" in asset['action']:
             flag_checked = self.check_department_staff(departmentName=asset['department'], staffName=asset['user'])
             if not flag_checked:
                 flag_created = self.create_staff_account(departmentName=asset['department'], staffName=asset['user'])
                 if not flag_created:
+                    self.log.error(f"未查询到人员且无法创建，资产编码{asset['asset_code']}修改失败")
                     return
 
         self.log.debug("正在修改资产")
