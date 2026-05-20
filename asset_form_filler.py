@@ -6,22 +6,35 @@ from openpyxl.styles import Alignment, Font, Border, Side
 import os
 import shutil
 import sys
+from file_logger import FileLogger
 
 
 class AssetFormFiller:
     """固定资产领用/回收单填写工具"""
 
-    def __init__(self, template_path=None, output_dir=None):
+    def __init__(self, template_path, output_dir=None, log=None):
         """
         初始化
-
-        template_path: 模板文件路径（如果为None，则创建默认模板）
         """
         self.template_path = template_path
         self.output_dir =output_dir if output_dir else "forms"
+        self.log = log
 
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
+
+        if not self.log:
+            self.log = FileLogger('logs', 'assetFormFiller')
+
+    def parse_data_from_file(self, file_path):
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data_text = f.read()
+                data = self.parse_tab_data(data_text)
+                return data
+        except Exception as e:
+            self.log.error(f"读取文件失败: {e}")
+            sys.exit(1)
 
     def parse_tab_data(self, text_data):
         """
@@ -82,19 +95,23 @@ class AssetFormFiller:
 
         form_data 格式:
         {
-            'form_type': '领用',  # 或 '回收'
-            'department': '天府文创城人民法庭',
-            'user': '周明军',
+            'form_type': '领用',  # 或 '回收' 或 ’搬迁’
+            'department': '部门',
+            'user': '姓名',
             'date': '2026-05-12',
             'reason': '工作需要',
             'assets': [
                 {
-                    'seq': 1,
-                    'name': '台式计算机',
-                    'brand_model': '戴尔OptiPlex 3050 SFF 003068',
-                    'location': '2号楼623',
-                    'asset_code': '510122MB1867896218000450',
-                    'remark': '回收'
+                    'user': '使用人',
+                    'department': '部门',
+                    'reason': '事由',
+                    'action': '操作类型（回收/发放）',
+                    'name': '资产名称',
+                    'asset_code': '资产编码',
+                    'brand_model': '品牌型号',
+                    'location':'地点',
+                    'remark': '备注'
+                    'asset_type': '资产类型'
                 },
                 # ...
             ]
@@ -105,8 +122,7 @@ class AssetFormFiller:
             # 确定输出文件名
             if output_filename is None:
                 wr_date = datetime.now().strftime('%Y%m%d')
-                timestamp = datetime.now().strftime('%H%M%S')
-                output_filename = f"{wr_date}{form_data.get('asset_type', '固定资产')}申领单-{form_data.get('user', 'unknown')}.xlsx"
+                output_filename = f"{wr_date}{form_data.get('asset_type', '资产')}申领单-{form_data.get('user', 'unknown')}.xlsx"
 
             output_path = os.path.join(self.output_dir, output_filename)
 
@@ -135,11 +151,13 @@ class AssetFormFiller:
             # 2. 填写申请部门（第2行，C列）
             department_cell = ws['C2']
             department_cell.value = form_data.get('department', '')
+            department_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
 
             # 3. 填写使用人（第2行，G列）
             # user_cell = ws['G2']
             user_cell = ws['F2']
             user_cell.value = form_data.get('user', '')
+            user_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
 
             # 4. 填写领用/回收时间（第3行，C列）
             # date_cell = ws['C3']
@@ -154,7 +172,7 @@ class AssetFormFiller:
             for idx, asset in enumerate(assets):
                 row = start_row + idx
                 if row > 10:  # 最多5行
-                    print(f"⚠ 资产数量超过5行，第{idx + 1}行及以后将不被显示")
+                    self.log.warning(f"⚠ 资产数量超过5行，第{idx + 1}行及以后将不被显示")
                     break
 
                 # # 序号
@@ -164,7 +182,7 @@ class AssetFormFiller:
 
                 # 资产名称
                 name_cell = ws.cell(row=row, column=2, value=asset.get('name', ''))
-                name_cell.alignment = Alignment(horizontal='center', vertical='center')
+                name_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
 
                 # 品牌型号
                 model_cell = ws.cell(row=row, column=4, value=asset.get('brand_model', ''))
@@ -172,7 +190,7 @@ class AssetFormFiller:
 
                 # 安装地点
                 location_cell = ws.cell(row=row, column=6, value=asset.get('location', ''))
-                location_cell.alignment = Alignment(horizontal='center', vertical='center')
+                location_cell.alignment = Alignment(wrap_text=True, horizontal='center', vertical='center')
 
                 # 资产编码
                 code_cell = ws.cell(row=row, column=7, value=asset.get('asset_code', ''))
@@ -187,23 +205,33 @@ class AssetFormFiller:
             reason_cell = ws['C10']
             reason_cell.value = form_data.get('reason', '')
 
-            # # 7. 设置固定资产管理部门审核意见中的日期
-            # review_cell = ws['C21']
-            # review_value = review_cell.value
-            # if review_value and isinstance(review_value, str):
-            #     current_date = form_data.get('date', datetime.now().strftime('%Y-%m-%d'))
-            #     review_cell.value = review_value.replace('年 月 日', f'年{current_date[5:7]}月{current_date[8:10]}日')
-
             # 保存文件
             wb.save(output_path)
             # print(f"✓ 表单已生成: {output_path}")
             return output_path
 
         except Exception as e:
-            print(f"✗ 填写表单失败: {e}")
+            self.log.error(f"✗ 填写表单失败: {e}")
             import traceback
             traceback.print_exc()
             return None
+
+
+    def fill_forms(self, data_list):
+        # 按使用人分组
+        grouped = self.group_assets_by_user(data_list)
+
+        self.log.debug(f"✅ 分组为 {len(grouped)} 个表单")
+
+        # 为每个使用人生成表单
+        results = []
+        for user_key, group in grouped.items():
+            self.log.debug(f"为{group['asset_type']} {group['user']} ({group['department']}) 生成表单")
+            output_file = self.fill_form(group)
+            if output_file:
+                results.append(output_file)
+                self.log.info(f"✅ 表单已保存: {output_file}")
+        self.log.info(f"✅ 总共生成 {len(results)} 个表单")
 
 
 
@@ -300,11 +328,9 @@ def main():
             # print(f"  ✓ 表单已保存: {output_file}")
 
     if not args.verbose:
-        # print("\n" + "=" * 60)
         print(f"\n✓ 成功生成 {len(results)} 个表单")
         for f in results:
             print(f"  - {f}")
-        # print("=" * 60)
 
 
 if __name__ == "__main__":

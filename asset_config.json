@@ -1,0 +1,11 @@
+{
+  "username": "13683498313",
+  "password": "tfxxhzcgl619%",
+  "login_url": "https://gz.dothantech.com/#/login",
+  "in_file_path": "./变更清单.txt",
+  "template_path": "./固定资产领用及回收单-模板.xlsx",
+  "output_dir": "./资产申领回收单/",
+  "chrome_driver_path": "chromedriver.exe",
+  "verbose": true
+}
+
