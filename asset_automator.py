@@ -47,7 +47,7 @@ class AssetAutomator:
                 # print("✅ 登录成功！")
                 self.log.info("✅ 资产管理系统登录成功")
                 self.loginID = result.get("resultInfo").get("loginID")
-                self.adminID = result.get("resultInfo").get("id")
+                self.id = result.get("resultInfo").get("id")
                 return True
             else:
                 # print(f"❌ 登录失败：{result}")
@@ -98,21 +98,21 @@ class AssetAutomator:
                 return True
         return False
 
-    def search_staffs(self, staffName):
+    def search_staffs(self, staff_name):
         right_staffs = []
-        if len(staffName) > 0:
+        if len(staff_name) > 0:
             for idx, item in enumerate(self.staffList):
-                if staffName == item.get('staffName'):
+                if staff_name == item.get('staffName'):
                     right_staffs.append(item)
             if len(right_staffs) > 0:
-                self.log.debug(f"找到名称为 {staffName} 的部门 {len(staffName)} 个")
+                self.log.debug(f"找到名称为 {staff_name} 的部门 {len(staff_name)} 个")
                 return right_staffs
 
-        self.log.warning(f"人员:{staffName}不存在")
+        self.log.warning(f"人员:{staff_name}不存在")
         return None
 
-    def search_staff(self, staffName):
-        right_staffs = self.search_staffs(staffName)
+    def search_staff(self, staff_name):
+        right_staffs = self.search_staffs(staff_name)
         if len(right_staffs) > 0:
             if len(right_staffs) > 1:
                 self.log.warning(f"找到名称为 {right_staffs} 的员工 {len(right_staffs)} 个，返回第一个")
@@ -161,7 +161,7 @@ class AssetAutomator:
         self.log.warning(f"部门:{departmentName} 人员：{staffName}不存在")
         return None
 
-    def create_staff_account(self, departmentName, staffName):
+    def create_staff_account_by_name(self, departmentName, staffName):
         if not departmentName or not staffName:
             self.log.error(f"新建用户失败！需同时输入部门:{departmentName}人员:{staffName}信息")
             return False
@@ -196,6 +196,46 @@ class AssetAutomator:
         else:
             self.log.error("未知的部门，新建用户失败！")
             return False
+
+    def delete_staff_account_by_name(self, department_name, staff_name):
+        if not department_name or not staff_name:
+            self.log.error(f"新建用户失败！需同时输入部门:{department_name}人员:{staff_name}信息")
+            return False
+        staff = self.search_department_staff(department_name, staff_name)
+        return self.delete_staff_account(staff)
+
+
+    def delete_staff_account(self, staff):
+        if not staff:
+            self.log.warning(f"待删除用户不存在")
+            return False
+        if staff:
+            params = {
+                'affiliatedDept': staff.get('affiliatedDept', ""),
+                'id': staff.get('id', ""),
+                'staffName': staff.get('staffName', ""),
+                'userID': self.id,
+                'jobNumber': "",
+                'position': "",
+                'workingPosition': 1,
+                'loginID': self.loginID
+            }
+            res = self.session.delete(f"{self.base_url}/api/Staff",
+                                    params=params)
+
+            result = res.json()
+            if result.get('statusCode') == CODE_SUCCESS:
+                self.log.info(f"✅ 用户 {staff.get('staffName')} 删除成功")
+                flag_update_staff_list = self.get_staff_list()
+                if not flag_update_staff_list:
+                    self.log.warning("人员列表未正常更新！！！")
+                return True
+            else:
+                self.log.error("用户 {staff.get('staffName')} 删除失败！")
+                return False
+
+        self.log.warning("未找到待删除用户！")
+        return False
 
     def query_asset_by_code(self, asset_code):
         """根据资产编码查询目标资产，返回资产"""
@@ -247,7 +287,7 @@ class AssetAutomator:
             return None
 
     def query_asset_by_department_and_staff(self, departmentName, staffName):
-        """根据部门人员查询目标资产，返回资产"""
+        """根据部门和人员查询目标资产，返回资产"""
         if not departmentName or not staffName:
             self.log.error(f"无法查询-请输入完整的部门人员信息: 部门：{departmentName} 人员：{staffName}")
             return None
@@ -334,9 +374,9 @@ class AssetAutomator:
                                       params={'loginID': self.loginID})
         remark_result = remark_res.json()
         if remark_result.get("statusCode") == CODE_SUCCESS:
-            self.log.info(f"✅ {new_asset['assetName']} {new_asset['assetCoding']} 备注内容：{remark}修改成功！")
+            self.log.info(f"✅ {new_asset['assetName']} {new_asset['assetCoding']} 备注内容：{remark} 修改成功！")
         else:
-            self.log.error(f"备注{remark}未修改！！！！")
+            self.log.error(f"备注：{remark} 未修改！！！！")
         return
 
     def update_asset_by_code(self, asset):
@@ -356,11 +396,11 @@ class AssetAutomator:
             self.log.error(f"❌ 未查询到准确的资产信息，资产{asset_code}修改失败")
             return
 
-        # 判断是否已有部门人员，如果不是则新建账号
+        # 判断是否已有部门的人员，如果不是则新建账号
         if "发放" in asset['action']:
             searched_staff = self.search_department_staff(departmentName=department_name, staffName=staff_name)
             if not searched_staff:
-                flag_created = self.create_staff_account(departmentName=department_name, staffName=staff_name)
+                flag_created = self.create_staff_account_by_name(departmentName=department_name, staffName=staff_name)
                 if not flag_created:
                     self.log.error(f"❌ 未查询到人员且无法创建，资产编码{asset_code}修改失败")
                     return
@@ -426,31 +466,31 @@ class AssetAutomator:
         old_department_name = data['old_department']
         new_department_name = data['new_department']
         location = data['location']
+        old_staff = self.search_department_staff(old_department_name, user_name)
         # 新建新部门的人员账号
-        existed_staff = self.search_department_staff(new_department_name, user_name)
-        if not existed_staff:
-            success = self.create_staff_account(departmentName=new_department_name, staffName=user_name)
-            if not success:
+        new_staff = self.search_department_staff(new_department_name, user_name)
+        if not new_staff:
+            new_staff = self.create_staff_account_by_name(departmentName=new_department_name, staffName=user_name)
+            if not new_staff:
                 self.log.error(f"新建部门{new_department_name}人员{user_name}账号失败，无法调整部门")
-                return
 
         asset_list = self.query_asset_by_department_and_staff(departmentName=old_department_name, staffName=user_name)
 
-        if not asset_list:
-            return
-
         results = []
-        for asset in asset_list:
-            input_asset = {
-                'asset_code': asset['assetCoding'],
-                'department': new_department_name,
-                'user': user_name,
-                'name': asset['assetName'],
-                'location': location if location else asset['depositSite'],
-                'action': "变更"
-            }
-            result = self.update_asset_by_code(input_asset)
-            results.append(result)
+        if asset_list and new_staff:
+            for asset in asset_list:
+                input_asset = {
+                    'asset_code': asset['assetCoding'],
+                    'department': new_department_name,
+                    'user': user_name,
+                    'name': asset['assetName'],
+                    'location': location if location else asset['depositSite'],
+                    'action': "变更"
+                }
+                result = self.update_asset_by_code(input_asset)
+                results.append(result)
+
+        self.delete_staff_account(old_staff)
         return results
 
     def batch_update_department(self, data_list):
@@ -516,7 +556,6 @@ def load_param_from_json():
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
             config = json.load(f)
-        # print(config)
         return config
     except FileNotFoundError:
         print(f"请创建配置文件 {config_file} 后再运行")

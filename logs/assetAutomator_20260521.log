@@ -367,3 +367,80 @@
 2026-05-21 13:27:23 | INFO     | asset_automator.py:412 | ✅ 📊资产修改完成,  修改后数据：{'id': '5213BE37-9AA5-4961-AF6A-45BC686E2E5D', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员1', 'createTime': '2026-05-21 13:27:23', 'maintainCost': 0.0, 'depositSite': '新地点', 'businessStatus': 2, 'operateTime': '2026-05-21 13:27:23', 'state': 0}
 2026-05-21 13:27:23 | INFO     | asset_form_filler.py:232 | ✅ 表单已保存: ./资产申领回收单/20260521固定资产申领单-综合办公室（司法警察大队）-测试人员1.xlsx
 2026-05-21 13:27:23 | INFO     | asset_form_filler.py:233 | ✅ 总共生成 1 个表单
+2026-05-21 14:18:45 | INFO     | file_logger.py:75 | 程序启动
+2026-05-21 14:18:45 | INFO     | file_logger.py:75 | 从 ./in_file.txt 中解析数据
+2026-05-21 14:18:45 | INFO     | file_logger.py:75 | 成功解析 2 条记录
+2026-05-21 14:18:45 | INFO     | asset_automator.py:48 | ✅ 资产管理系统登录成功
+2026-05-21 14:18:45 | INFO     | file_logger.py:75 | 人员0. 测试人员1 - 综合办公室（司法警察大队） - 太平人民法庭 - 测试地点3
+2026-05-21 14:18:45 | INFO     | file_logger.py:75 | 人员1. 测试人员2 - 综合办公室（司法警察大队） - 太平人民法庭 - 测试地点4
+2026-05-21 14:18:45 | WARNING  | asset_automator.py:161 | 部门:太平人民法庭 人员：测试人员1不存在
+2026-05-21 14:18:45 | INFO     | asset_automator.py:188 | 新建用户成功，部门：太平人民法庭 姓名：测试人员1
+2026-05-21 14:18:46 | INFO     | asset_automator.py:326 | ✅ 查询到 综合办公室（司法警察大队） 测试人员1 名下总共 4 条资产信息！！
+2026-05-21 14:18:46 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=test202601101006, 名称=IP语音座机
+2026-05-21 14:18:46 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '32D620B1-A4F5-4F0E-A97A-CAB965670D11', 'deptName': '太平人民法庭', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:18:46', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:18:46', 'state': 0}
+2026-05-21 14:18:47 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=testTY2020000061XSQ, 名称=显示器
+2026-05-21 14:18:47 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '50B89BD0-C58C-4236-A030-0913949BBEA5', 'deptName': '太平人民法庭', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:18:47', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:18:47', 'state': 0}
+2026-05-21 14:18:47 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=testTY2020000082XSQ, 名称=显示器
+2026-05-21 14:18:48 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '2075A82C-5E16-46BF-A749-485A514FEC8F', 'deptName': '太平人民法庭', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:18:48', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:18:47', 'state': 0}
+2026-05-21 14:18:48 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=testTY2020000087XSQ, 名称=显示器
+2026-05-21 14:18:48 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '2E851C2F-78BF-4D5B-B71F-DC3B2B6B5ABB', 'deptName': '太平人民法庭', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:18:48', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:18:48', 'state': 0}
+2026-05-21 14:19:04 | INFO     | file_logger.py:75 | 程序启动
+2026-05-21 14:19:04 | INFO     | file_logger.py:75 | 从 ./in_file.txt 中解析数据
+2026-05-21 14:19:04 | INFO     | file_logger.py:75 | 成功解析 2 条记录
+2026-05-21 14:19:04 | INFO     | asset_automator.py:48 | ✅ 资产管理系统登录成功
+2026-05-21 14:19:04 | INFO     | file_logger.py:75 | 人员0. 测试人员1 - 综合办公室（司法警察大队） - 太平人民法庭 - 测试地点3
+2026-05-21 14:19:04 | INFO     | file_logger.py:75 | 人员1. 测试人员2 - 综合办公室（司法警察大队） - 太平人民法庭 - 测试地点4
+2026-05-21 14:19:05 | WARNING  | asset_automator.py:329 | ❌ 未查询到符合条件的资产
+2026-05-21 14:19:05 | INFO     | asset_automator.py:326 | ✅ 查询到 综合办公室（司法警察大队） 测试人员2 名下总共 6 条资产信息！！
+2026-05-21 14:19:05 | INFO     | asset_automator.py:277 | ✅ 查询到资产：编码=test510122MB1867896219000078, 名称=台式计算机
+2026-05-21 14:19:05 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': 'B2BDFEF4-CB1C-425D-B31D-4A7E737245F4', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:05', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:05', 'state': 0}
+2026-05-21 14:19:06 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=testTY2021000052XSQ, 名称=显示器
+2026-05-21 14:19:06 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '5ED706D3-4A95-4677-9DBA-94D9CAD7CC9C', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:06', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:06', 'state': 0}
+2026-05-21 14:19:06 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=test510122MB1867896218000583, 名称=台式计算机
+2026-05-21 14:19:07 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': 'A6A35370-44AE-4069-8EF6-406367DE40D3', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:07', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:06', 'state': 0}
+2026-05-21 14:19:07 | INFO     | asset_automator.py:277 | ✅ 查询到资产：编码=testTY2020000059, 名称=台式计算机
+2026-05-21 14:19:07 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '35A7E174-61FA-4EF8-9DB6-CBC3033B8513', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:07', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:07', 'state': 0}
+2026-05-21 14:19:07 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-21 14:19:08 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '6918D7B7-0982-4B2A-8D47-609942351C65', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:08', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:07', 'state': 0}
+2026-05-21 14:19:08 | INFO     | asset_automator.py:272 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-21 14:19:08 | INFO     | asset_automator.py:446 | ✅ 📊资产修改完成,  修改后数据：{'id': '8086FF78-CA23-4BE3-892E-3FB131C7AF76', 'deptName': '太平人民法庭', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:19:08', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:19:08', 'state': 0}
+2026-05-21 14:19:08 | ERROR    | asset_automator.py:227 | 删除用户失败！
+2026-05-21 14:29:02 | INFO     | file_logger.py:75 | 程序启动
+2026-05-21 14:29:02 | INFO     | file_logger.py:75 | 从 ./in_file.txt 中解析数据
+2026-05-21 14:29:02 | INFO     | file_logger.py:75 | 成功解析 2 条记录
+2026-05-21 14:29:03 | INFO     | asset_automator.py:48 | ✅ 资产管理系统登录成功
+2026-05-21 14:29:03 | INFO     | file_logger.py:75 | 人员0. 测试人员1 - 太平人民法庭 - 综合办公室（司法警察大队） - 测试地点3
+2026-05-21 14:29:03 | INFO     | file_logger.py:75 | 人员1. 测试人员2 - 太平人民法庭 - 综合办公室（司法警察大队） - 测试地点4
+2026-05-21 14:29:13 | INFO     | asset_automator.py:357 | ✅ 查询到 太平人民法庭 测试人员1 名下总共 4 条资产信息！！
+2026-05-21 14:29:19 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=testTY2020000087XSQ, 名称=显示器
+2026-05-21 14:29:24 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '7DC11190-8F27-40D2-862E-ED122DD9FE06', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:29:19', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:29:19', 'state': 0}
+2026-05-21 14:29:53 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=testTY2020000082XSQ, 名称=显示器
+2026-05-21 14:29:56 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '5B3EF465-6307-4F5B-972F-EA6A59A32ECF', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:29:53', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:29:53', 'state': 0}
+2026-05-21 14:30:03 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=testTY2020000061XSQ, 名称=显示器
+2026-05-21 14:30:08 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '07A73239-5D70-4A90-B5A0-1A4636B57F5B', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:30:03', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:03', 'state': 0}
+2026-05-21 14:30:08 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=test202601101006, 名称=IP语音座机
+2026-05-21 14:30:11 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': 'C74BFE78-97F5-43FC-982D-D9C7405352B0', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员1', 'createTime': '2026-05-21 14:30:09', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点3', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:08', 'state': 0}
+2026-05-21 14:30:17 | ERROR    | asset_automator.py:259 | 用户 {staff.get('staffName')} 删除失败！
+2026-05-21 14:30:18 | INFO     | asset_automator.py:357 | ✅ 查询到 太平人民法庭 测试人员2 名下总共 6 条资产信息！！
+2026-05-21 14:30:18 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=test202601101004, 名称=IP语音座机
+2026-05-21 14:30:18 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '628A5CBA-BD2D-4F4D-B3EF-BCBF4B4BC4AF', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:18', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:18', 'state': 0}
+2026-05-21 14:30:19 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=test201801160107, 名称=显示器
+2026-05-21 14:30:19 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '4622F8EB-9A17-44F5-BE88-1857A564C2A4', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:19', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:19', 'state': 0}
+2026-05-21 14:30:19 | INFO     | asset_automator.py:308 | ✅ 查询到资产：编码=testTY2020000059, 名称=台式计算机
+2026-05-21 14:30:20 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': 'E6F1AF5F-E733-4378-9DBA-CAD8BD825FB8', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:20', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:19', 'state': 0}
+2026-05-21 14:30:20 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=test510122MB1867896218000583, 名称=台式计算机
+2026-05-21 14:30:20 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '83DB7C93-5C94-4957-A57B-166A4E58FDCB', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:20', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:20', 'state': 0}
+2026-05-21 14:30:20 | INFO     | asset_automator.py:303 | ✅ 查询到资产：编码=testTY2021000052XSQ, 名称=显示器
+2026-05-21 14:30:21 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '83687FB1-E90A-4217-A70E-B95C4B78E528', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:21', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:20', 'state': 0}
+2026-05-21 14:30:21 | INFO     | asset_automator.py:308 | ✅ 查询到资产：编码=test510122MB1867896219000078, 名称=台式计算机
+2026-05-21 14:30:21 | INFO     | asset_automator.py:477 | ✅ 📊资产修改完成,  修改后数据：{'id': '33CC2221-44A9-47B7-8094-BB43AB7C1434', 'deptName': '综合办公室（司法警察大队）', 'staffName': '测试人员2', 'createTime': '2026-05-21 14:30:21', 'maintainCost': 0.0, 'operatorId': 'DE5BF389-5182-4E8B-97E6-3FCE2D418D90', 'depositSite': '测试地点4', 'businessStatus': 2, 'operateTime': '2026-05-21 14:30:21', 'state': 0}
+2026-05-21 14:32:12 | INFO     | file_logger.py:75 | 程序启动
+2026-05-21 14:32:12 | INFO     | file_logger.py:75 | 从 ./in_file.txt 中解析数据
+2026-05-21 14:32:12 | INFO     | file_logger.py:75 | 成功解析 2 条记录
+2026-05-21 14:32:13 | INFO     | asset_automator.py:48 | ✅ 资产管理系统登录成功
+2026-05-21 14:32:13 | INFO     | file_logger.py:75 | 人员0. 测试人员1 - 太平人民法庭 - 综合办公室（司法警察大队） - 测试地点3
+2026-05-21 14:32:13 | INFO     | file_logger.py:75 | 人员1. 测试人员2 - 太平人民法庭 - 综合办公室（司法警察大队） - 测试地点4
+2026-05-21 14:32:16 | WARNING  | asset_automator.py:360 | ❌ 未查询到符合条件的资产
+2026-05-21 14:32:21 | INFO     | asset_automator.py:253 | ✅ 用户 测试人员1 删除成功
+2026-05-21 14:32:29 | WARNING  | asset_automator.py:360 | ❌ 未查询到符合条件的资产
+2026-05-21 14:32:30 | INFO     | asset_automator.py:253 | ✅ 用户 测试人员2 删除成功

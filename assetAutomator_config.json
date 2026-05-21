@@ -5,7 +5,7 @@
   "base_url": "https://mygdzc.d6688.cn",
   "in_file_path": "./in_file.txt",
   "template_path": "./固定资产领用及回收单-模板.xlsx",
-  "mode": "资产变更",
+  "mode": "部门调整",
   "_comment_mode": "部门调整 资产变更",
   "output_dir": "./资产申领回收单/",
   "_comment_log_level": "日志级别: 10=DEBUG, 20=INFO, 30=WARNING, 40=ERROR, 50=CRITICAL",
