@@ -1,4 +1,3 @@
-# import pandas as pd
 import argparse
 from datetime import datetime
 from openpyxl import load_workbook, Workbook
@@ -122,7 +121,7 @@ class AssetFormFiller:
             # 确定输出文件名
             if output_filename is None:
                 wr_date = datetime.now().strftime('%Y%m%d')
-                output_filename = f"{wr_date}{form_data.get('asset_type', '资产')}申领单-{form_data.get('user', 'unknown')}.xlsx"
+                output_filename = f"{wr_date}{form_data.get('asset_type', '资产')}申领单-{form_data.get('department', '')}-{form_data.get('user', 'unknown')}.xlsx"
 
             output_path = os.path.join(self.output_dir, output_filename)
 
