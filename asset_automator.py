@@ -227,11 +227,13 @@ class AssetAutomator:
             if result.get('statusCode') == CODE_SUCCESS:
                 self.log.info(f"✅ 用户 {staff.get('staffName')} 删除成功")
                 flag_update_staff_list = self.get_staff_list()
-                if not flag_update_staff_list:
+                if flag_update_staff_list:
+                    self.log.info("人员列表已更新！！！")
+                else:
                     self.log.warning("人员列表未正常更新！！！")
                 return True
             else:
-                self.log.error("用户 {staff.get('staffName')} 删除失败！")
+                self.log.error(f"用户 {staff.get('staffName')} 删除失败！")
                 return False
 
         self.log.warning("未找到待删除用户！")
@@ -334,6 +336,8 @@ class AssetAutomator:
         else:
             self.log.warning("❌ 未查询到符合条件的资产")
             return None
+
+
 
     def update_remark(self, asset):
         new_asset = self.query_asset_by_code(asset_code=asset['asset_code'])
@@ -545,7 +549,7 @@ def main():
         # 生成资产申领单
         filler = AssetFormFiller(params['template_path'], params['output_dir'], log.get_logger())
         filler.fill_forms(data_list)
-
+    log.info("程序结束")
 
 
 # 使用配置文件的方式

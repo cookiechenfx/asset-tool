@@ -1,0 +1,16 @@
+{
+  "username": "13683498313",
+  "password": "tfxxhzcgl619%",
+  "encrypted_password":"5D470E15CD8DD9C813B9555DC7FD0DA9",
+  "base_url": "https://mygdzc.d6688.cn",
+  "in_file_path": "./查询部门人员清单.txt",
+  "output_dir": "./查询结果/",
+  "_comment_log_level": "日志级别: 10=DEBUG, 20=INFO, 30=WARNING, 40=ERROR, 50=CRITICAL",
+  "log_level": 20,
+  "HEADERS": {
+    	"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    	"Referer": "https://mygdzc.d6688.cn/",
+    	"Origin": "https://mygdzc.d6688.cn"
+	}
+}
+
