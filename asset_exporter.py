@@ -57,8 +57,8 @@ class AssetExporter:
 
             # 确定输出文件名
             if output_filename is None:
-                wr_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                output_filename = f"{wr_date}资产查询结果.xlsx"
+                wr_date = datetime.now().strftime('%Y-%m-%d %H.%M.%S')
+                output_filename = f"{wr_date} 查询结果.xlsx"
 
             output_path = os.path.join(self.output_dir, output_filename)
 
